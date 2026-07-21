@@ -51,17 +51,13 @@ export default function Navbar() {
 
   const isDark = mounted && resolvedTheme === 'dark';
 
-  const cycleTheme = () => {
-    if (resolvedTheme === 'light') setTheme('dark');
-    else if (resolvedTheme === 'dark') setTheme('system');
-    else setTheme('light');
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
   };
 
   const ThemeIcon = () => {
-    if (!mounted) return <Monitor className="w-4 h-4" />;
-    if (theme === 'system') return <Monitor className="w-4 h-4" />;
-    if (resolvedTheme === 'dark') return <Moon className="w-4 h-4" />;
-    return <Sun className="w-4 h-4" />;
+    if (!mounted) return <Sun className="w-4 h-4" />;
+    return resolvedTheme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4" />;
   };
 
   return (
@@ -144,7 +140,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             {/* Theme Toggle */}
             <button
-              onClick={cycleTheme}
+              onClick={toggleTheme}
               className="w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-200 focus-ring"
               style={{
                 color: 'var(--text-secondary)',
