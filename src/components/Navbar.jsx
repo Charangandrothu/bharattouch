@@ -107,12 +107,6 @@ export default function Navbar() {
               className="h-7 w-auto"
               style={{ filter: isDark ? 'brightness(0) invert(1)' : 'none' }}
             />
-            <span
-              className="font-bold text-lg tracking-tight hidden sm:block"
-              style={{ color: 'var(--text-primary)' }}
-            >
-              Bharat<span style={{ color: 'var(--accent)' }}>Touch</span>
-            </span>
           </a>
 
           {/* Desktop Links */}

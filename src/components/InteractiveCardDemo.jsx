@@ -300,9 +300,6 @@ export default function InteractiveCardDemo() {
                       className="h-7 w-auto"
                       style={{ filter: activeColor.value === '#FFFFFF' ? 'none' : 'brightness(0) invert(1)' }}
                     />
-                    <span className="font-bold text-base tracking-tight" style={{ color: activeColor.text }}>
-                      BharatTouch
-                    </span>
                   </div>
                   <div className="flex flex-col items-end gap-1">
                     <div
